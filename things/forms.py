@@ -5,4 +5,4 @@ from django import forms
 class ThingForm(forms.Form):
     name = forms.CharField(label = 'Name', max_length = 35)
     description = forms.CharField(widget = forms.Textarea)
-    quantity = forms.CharField(widget = forms.NumberInput(attrs={'min':0, 'max' : 50}))
+    quantity = forms.IntegerField(min_value = 0, max_value = 50,widget = forms.NumberInput)
